@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melissa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins', sans-serif;
+background:#fff5f8;
+color:#111;
+padding-top:80px;
+}
+
+/* MENÚ */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:18px;
+font-weight:600;
+z-index:1000;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav a{
+text-decoration:none;
+color:#000;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#d48fa6;
+}
+
+/* SECCIONES */
+section{
+padding:100px 10%;
+margin:60px auto;
+width:85%;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+
+.seccion-blanca{
+background:#ffffff;
+}
+
+.seccion-rosa{
+background:linear-gradient(135deg, #ffeaf2, #ffd9e8);
+}
+
+
+h2{
+font-family:'Playfair Display', serif;
+font-size:38px;
+margin-bottom:30px;
+text-align:center;
+}
+
+/* PRESENTACIÓN */
+.presentacion{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+}
+
+.texto-presentacion{
+width:55%;
+}
+
+.texto-presentacion h1{
+font-size:42px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.texto-presentacion p{
+font-size:17px;
+line-height:1.8;
+}
+
+/* CARRUSEL */
+.carrusel{
+width:40%;
+aspect-ratio:4/5;
+position:relative;
+overflow:hidden;
+border-radius:18px;
+}
+
+.carrusel img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+}
+
+.carrusel img.active{
+display:block;
+}
+
+.flecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:white;
+border:none;
+font-size:22px;
+cursor:pointer;
+padding:6px 12px;
+border-radius:50%;
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+.flecha.izq{left:10px;}
+.flecha.der{right:10px;}
+
+/* TEXTO SECCIONES */
+.texto-seccion{
+max-width:900px;
+margin:0 auto 40px auto;
+text-align:center;
+font-size:17px;
+line-height:1.8;
+}
+
+/* FAMILIA */
+.familia-grid{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:nowrap;
+}
+
+.familia-grid img{
+width:280px;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:18px;
+}
+
+/* MASCOTAS */
+.mascotas-container{
+overflow:hidden;
+white-space:nowrap;
+margin-top:30px;
+}
+
+.mascotas-slider{
+display:inline-block;
+animation:scroll 40s linear infinite;
+}
+
+.mascotas-slider img{
+height:160px;
+width:auto;
+margin:0 15px;
+border-radius:15px;
+object-fit:cover;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* HOBBIES */
+.hobbies-container{
+display:flex;
+justify-content:center;
+margin-top:30px;
+}
+
+.hobbies-slider{
+display:flex;
+gap:20px;
+}
+
+.hobbies-slider img{
+width:180px;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.hobbies-slider img:hover{
+transform:scale(1.05);
+}
+
+/* MEDIA */
+.media{
+display:flex;
+justify-content:center;
+margin-top:30px;
+}
+
+iframe{
+border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#quien">Quién soy</a>
+<a href="#familia">Familia</a>
+<a href="#mascotas">Mascotas</a>
+<a href="#hobbies">Hobbies</a>
+<a href="#musica">Música</a>
+<a href="#videos">Videos</a>
+</nav>
+
+<!-- QUIÉN SOY -->
+<section id="quien" class="seccion-blanca">
+<div class="presentacion">
+
+<div class="texto-presentacion">
+<h1>Hola, soy Melissa</h1>
+<p>
+Tengo 21 años, vivo en el centro de oaxaca y actualmente curso el octavo semestre de mi carrera. Esta etapa representa esfuerzo y compromiso. La escuela me ha enseñado a ser más responsable y perseverante.
+<br><br>
+Me considero una persona reservada pero muy enfocada en mis metas. Siempre procuro que cada proyecto refleje lo mejor de mí.
+<br><br>
+A futuro deseo desarrollarme profesionalmente y demostrar hasta dónde puedo llegar cuando me propongo algo
+</p>
+</div>
+
+<div class="carrusel">
+<img src="perfil.jpeg" class="active">
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+<img src="foto4.jpeg">
+
+<button class="flecha izq" onclick="prev()">‹</button>
+<button class="flecha der" onclick="next()">›</button>
+</div>
+
+</div>
+</section>
+
+<!-- FAMILIA -->
+<section id="familia" class="seccion-rosa">
+<h2>Mi Familia</h2>
+
+<div class="texto-seccion">
+<p>
+Tengo 4 hermanas y yo soy la más pequeña del matrimonio de mis papás. 
+Cada una de ellas ha formado parte importante de mi vida y de mi crecimiento.
+</p>
+
+<p>
+Casi diario convivo con mis abuelitos paternos, quienes son personas sumamente especiales para mí. 
+Su cariño y apoyo constante hacen que cada día sea más significativo.
+</p>
+
+<p>
+Cada integrante de mi familia ha sido un apoyo fundamental en mis estudios y en cada etapa de mi vida. 
+Siempre me impulsan a ser mejor persona, a no rendirme y a creer en mí misma.
+</p>
+</div>
+
+<div class="familia-grid">
+<img src="familia1.jpeg">
+<img src="familia2.jpeg">
+<img src="familia3.jpeg">
+</div>
+</section>
+
+<!-- MASCOTAS -->
+<section id="mascotas" class="seccion-blanca">
+<h2>Mis Mascotas</h2>
+
+<div class="texto-seccion">
+<p>
+Mis animalitos también forman parte de mi familia. Tengo nueve gatos, dos perros, dos cuyos y una tortuga. Cada uno tiene su personalidad, sus costumbres y su forma de demostrar cariño. 
+<br><br> 
+Ellos me acompañan todos los días, me ayudan a relajarme y llenan mi casa de vida. Cuidarlos es una responsabilidad, pero también una de las cosas que más disfruto.
+</p>
+</div>
+
+
+<div class="mascotas-container">
+<div class="mascotas-slider">
+<img src="mascota1.jpeg">
+<img src="mascota2.jpeg">
+<img src="mascota3.jpeg">
+<img src="mascota4.jpeg">
+<img src="mascota5.jpeg">
+<img src="mascota6.jpeg">
+<img src="mascota7.jpeg">
+<img src="mascota8.jpeg">
+<img src="mascota9.jpeg">
+<img src="mascota10.jpeg">
+
+<img src="mascota1.jpeg">
+<img src="mascota2.jpeg">
+<img src="mascota3.jpeg">
+<img src="mascota4.jpeg">
+<img src="mascota5.jpeg">
+<img src="mascota6.jpeg">
+<img src="mascota7.jpeg">
+<img src="mascota8.jpeg">
+<img src="mascota9.jpeg">
+<img src="mascota10.jpeg">
+</div>
+</div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies" class="seccion-rosa">
+<h2>Mis Hobbies</h2>
+
+<div class="texto-seccion">
+<p>
+Disfruto escuchar música, ver harry potter, f1 y ver muchas series así mismo pasar tiempo con mi familia y mis mascotas.
+</p>
+</div>
+
+<div class="hobbies-container">
+<div class="hobbies-slider">
+<img src="hobby1.jpeg">
+<img src="hobby2.jpeg">
+<img src="hobby3.jpeg">
+<img src="hobby4.jpeg">
+</div>
+</div>
+</section>
+
+<!-- MÚSICA -->
+<section id="musica" class="media-container">
+    <h2>Mi Playlist Favorita</h2>
+
+    <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/3DK6m7It6Pw857FcQftMds" 
+        width="400" 
+        height="380" 
+        frameborder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+	<iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/4iz9lGMjU1lXS51oPmUmTe" 
+        width="400" 
+        height="380" 
+        frameborder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+
+    <p>
+        Aquí puedes escuchar unas de mis canciones favoritas.
+    </p>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="seccion-rosa">
+<h2>Mis Videos</h2>
+    <p>
+        Esta es una de mis canciones favoritas y un video mío en el acuario Michin
+    </p>
+<div class="media">
+<iframe width="560" height="315" src="https://youtube.com/embed/eJwXivMnxcY" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+
+    <video width="500" controls>
+        <source src="VideoMel.mp4" type="video/mp4">
+    </video>
+</div>
+</section> 
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".carrusel img");
+
+function showSlide(i){
+slides.forEach(slide => slide.classList.remove("active"));
+slides[i].classList.add("active");
+}
+
+function next(){
+index = (index + 1) % slides.length;
+showSlide(index);
+}
+
+function prev(){
+index = (index - 1 + slides.length) % slides.length;
+showSlide(index);
+}
+</script>
+
+</body>
+</html>
+
+
